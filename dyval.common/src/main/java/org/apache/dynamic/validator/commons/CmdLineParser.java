@@ -7,6 +7,7 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.dynamic.validator.commons.exception.CommonsException;
+import org.apache.dynamic.validator.commons.vo.Args;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +17,7 @@ public abstract class CmdLineParser {
 
 	public abstract Options getOptions();
 	
-	//public abstract AppArgs parseArgs(String[] args) throws Exception;
+	public abstract Args parseArgs(String[] args) throws Exception;
 	
 	private PropertyReader propertyReader = new PropertyReader();
 	

@@ -49,8 +49,8 @@ public class PropertyReader {
     public Properties readFromLocal(String filePath) throws CommonsException {
         logger.info("Reading properties file: {} from Local", filePath);
         Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream(new File(filePath)));
+        try (FileInputStream fs = new FileInputStream(new File(filePath))) {
+            properties.load(fs);
             return properties;
         } catch (IOException e) {
             throw new CommonsException("Error while loading configuration file: " + e.getMessage());
